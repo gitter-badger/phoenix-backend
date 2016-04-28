@@ -1,0 +1,200 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Phoenix RESTful API"
+    },
+    "parameters": {
+        "user-id": {
+            "name": "user_id",
+            "in": "path",
+            "description": "用户Id",
+            "type": "integer",
+            "required": true
+        }
+    },
+    "paths": {
+        "/users/{user_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/parameters/user-id"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{user_id}/relationship": {
+            "parameters": [
+                {
+                    "$ref": "#/parameters/user-id"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "User": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "用户名"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "邮箱"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "手机"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "密码"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "名称"
+                },
+                "first_name": {
+                    "type": "string",
+                    "description": "名"
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "姓"
+                },
+                "avatar_url": {
+                    "type": "string",
+                    "description": "头像"
+                },
+                "age": {
+                    "type": "string",
+                    "description": "年龄"
+                },
+                "sex": {
+                    "type": "string",
+                    "description": "性别"
+                },
+                "birthday": {
+                    "type": "string",
+                    "description": "生日"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "国家"
+                },
+                "city": {
+                    "type": "string",
+                    "description": "城市"
+                },
+                "address": {
+                    "type": "string",
+                    "description": "地址"
+                },
+                "phone": {
+                    "type": "string",
+                    "description": "电话"
+                },
+                "company": {
+                    "type": "string",
+                    "description": "公司"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "主页"
+                },
+                "bio": {
+                    "type": "string",
+                    "description": "简介"
+                }
+            }
+        },
+        "UserRelationship": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        },
+        "Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        },
+        "Tag": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        },
+        "Group": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        },
+        "Post": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        },
+        "Message": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Id"
+                }
+            }
+        }
+    }
+}
